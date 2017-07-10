@@ -1,0 +1,331 @@
+
+
+*************************************************************************************************************
+									TEST PROGRAM OUTPUT
+*************************************************************************************************************
+
+*********************************************************************************************************
+
+Checking the state of the new object created by default constructor upon creation:
+
+TaxiJourney: [ location: , destination: , amPm: DAY,
+startTime: 00:00, endTime: 00:00, duration: 0,distance: 0,
+currentChargePerKm: 0, chargePerMin: 40, initialCharge: 240,
+chargePerkmDay: 50, chargePerKmNight: 70]
+
+Checking the current value of location:
+Changing the value of location...
+Expected output: Derby, actual output: Derby
+
+Checking the current value of destination: 
+Changing the value of destination...
+Expected output: Leeds, actual output: Leeds
+
+Checking the current value of startTime: 00:00
+Trying to change the value of startTime by passing a string that is not the right format e.g."HH:mm":
+Expected output 6:40, actual output: 00:00
+
+Trying to change the value of startTime by passing another string that is not the right format e.g. from 00:00 to 23:59:
+Expected output 56:40, actual output: 00:00
+
+Changing the value of startTime using a string of valid format...
+Expected output: 07:20, actual output: 07:20
+
+Checking the curent value of endTime: 00:00
+Trying to change the value of endTime by passing a string that is not the right format e.g."HH:mm":
+Expected output 9:23, actual output: 00:00
+
+Trying to change the value of endTime by passing another string that is not the right format e.g. from 00:00 to 23:59:
+Expected output 12:87, actual output: 00:00
+
+Changing the value of endTime using a string of valid format...
+Expected output: 08:50, actual output: 08:50
+
+Checking the duration of the Taxi Journey in minutes based on the start and end time: 90 minutes
+
+Checking the current value of initialCharge: 240
+Changing that value..Expected output: 150, actual output: 150
+
+Checking the current value of chargePerKmDay: 50
+Changing that value..Expected output: 60, actual output: 60
+
+Checking the current value of chargePerKmNight: 70
+Changing that value..Expected output: 120, actual output: 120
+
+Checking the current value of chargePerMin: 40
+Changing that value..Expected output: 90, actual output: 90
+
+Checking the value of amPm: DAY
+Changing that value..
+Expected output NIGHT, actual output: NIGHT
+Trying to change amPm to a string different than "day" or "night"...
+Expected output: ANIMAL, actual output: NIGHT
+
+Checking currentChargePerKm, based on when the journey took place - during the day ot during the night: 120
+
+Checking the current value of distance: 0
+Changing that value..Expected output: 210, actual output: 210
+
+Calculating the fare for the journey, based on the formula:
+Fare=initialCharge+duration*chargePerMin+distance+currentChargePerKm,
+Fare= 33450
+*********************************************************************************************************
+
+Checking the state of the new object created by custom constructor upon creation:
+
+TaxiJourney: [ location: Birmingham, destination: Manchester, amPm: NIGHT,
+startTime: 12:30, endTime: 14:40, duration: 130,distance: 230,
+currentChargePerKm: 0, chargePerMin: 40, initialCharge: 240,
+chargePerkmDay: 50, chargePerKmNight: 70]
+
+Checking the current value of location:Birmingham
+Changing the value of location...
+Expected output: Leicester, actual output: Leicester
+
+Checking the current value of destination: Manchester
+Changing the value of destination...
+Expected output: London, actual output: London
+
+Checking the current value of startTime: 12:30
+Trying to change the value of startTime by passing a string that is not the right format e.g."HH:mm":
+Expected output 6:40, actual output: 12:30
+
+Trying to change the value of startTime by passing another string that is not the right format e.g. from 00:00 to 23:59:
+Expected output 56:40, actual output: 12:30
+
+Changing the value of startTime using a string of valid format...
+Expected output: 16:40, actual output: 16:40
+
+Checking the curent value of endTime: 14:40
+Trying to change the value of endTime by passing a string that is not the right format e.g."HH:mm":
+Expected output 9:23, actual output: 14:40
+
+Trying to change the value of endTime by passing another string that is not the right format e.g. from 00:00 to 23:59:
+Expected output 12:87, actual output: 14:40
+
+Changing the value of endTime using a string of valid format...
+Expected output: 18:15, actual output: 18:15
+
+Checking the duration of the Taxi Journey in minutes based on the start and end time: 95 minutes
+
+Checking the current value of initialCharge: 240
+Changing that value..Expected output: 100, actual output: 100
+
+Checking the current value of chargePerKmDay: 50
+Changing that value..Expected output: 40, actual output: 40
+
+Checking the current value of chargePerKmNight: 70
+Changing that value..Expected output: 80, actual output: 80
+
+Checking the current value of chargePerMin: 40
+Changing that value..Expected output: 60, actual output: 60
+
+Checking the value of amPm: NIGHT
+Changing that value..
+Expected output DAY, actual output: DAY
+Trying to change amPm to a string different than "day" or "night"...
+Expected output: ANIMAL, actual output: DAY
+
+Checking currentChargePerKm, based on when the journey took place - during the day ot during the night: 40
+
+Checking the current value of distance: 230
+Changing that value..Expected output: 140, actual output: 140
+
+Calculating the fare for the journey, based on the formula:
+Fare=initialCharge+duration*chargePerMin+distance+currentChargePerKm,
+Fare= 11400
+
+Checking if the two objects are equal:  false
+*************************************************************************************************
+
+
+Do you want to do some more tests?   Y/N?
+y
+Do you want to create a new Taxi Journey?   Y/N?
+y
+Which constructor would you like to use?
+Type 'd' - for default constructor and 'c' - for the custom one...
+d
+
+No start location. Please type your start location:..
+Manchester
+Your start location is: Manchester
+
+No destination. Please type your destination:..
+Derby
+Your destination is: Derby
+
+No start time selected.
+Please type in the start time of the journey:..
+09:23
+You journey's start time is: 09:23
+
+No end time selected.
+Please type in the end time of the journey:..
+11:45
+You journey's end time is: 11:45
+
+Checking journey's distance...
+Your journey's distance is: 0
+Please input new distance in kilometres:
+345
+The updated distance is: 345 kilometres
+
+Checking journey's time period...
+Current time period: DAY
+Do you want to change it? Y/N
+y
+Please enter new time period...(day/night)
+night
+Your journey's time period remains  NIGHT
+
+Estimating duration based on start and end time ...
+Your journey's duration is: 142 minutes
+
+The initial charge for this journey in pence is: 240
+Do you want to change the initial charge   (Y/N)?
+y
+Please input new initial charge in pence...
+450
+You changed the initial charge to: 450 pence
+
+The charge per Km in pence for day journey is: 50
+Do you want to change the  charge   (Y/N)?
+y
+Please input new day charge in pence...
+70
+You changed the day charge to: 70 pence
+
+The charge per Km in pence for night journeys is: 70
+Do you want to change the  charge   (Y/N)?
+y
+Please input new night charge per Km in pence...
+90
+You changed the nigh charge to: 90 pence
+
+The current time period for your journey is: NIGHT
+That means that the current charge in pence for this journey is: 90
+
+The charge per minute in pence is: 40
+Do you want to change the  charge   (Y/N)?
+y
+Please input new night charge per minute in pence...
+50
+You changed the charge per minute to: 50 pence
+
+Estimating fare for the journey...based on the following formula: 
+Fare=initialCharge + duration * chargePerMin + distance * currentChargePerKm
+
+The fare for this journey in pence is: 38600
+
+
+Taxi Journey created !
+Overview of the created journey: 
+TaxiJourney: [ location: Manchester, destination: Derby, amPm: NIGHT,
+startTime: 09:23, endTime: 11:45, duration: 142,distance: 345,
+currentChargePerKm: 90, chargePerMin: 50, initialCharge: 450,
+chargePerkmDay: 70, chargePerKmNight: 90]
+
+Do you want to create a new Taxi Journey?   Y/N?
+y
+Which constructor would you like to use?
+Type 'd' - for default constructor and 'c' - forthe custom one...
+c
+Please type in the start location:..
+Nottingham
+Please type in the destination:...
+Leicester
+Please choose the start time:...
+22:23
+Please choose journey's end time:...
+23:30
+Please choose distance in kilometres:..
+80
+Please choose time period for the journey (day/night):...
+day
+
+Estimating duration based on start and end time ...
+Your journey's duration is: 67 minutes
+
+The initial charge for this journey in pence is: 240
+Do you want to change the initial charge   (Y/N)?
+y
+Please input new initial charge in pence...
+670
+You changed the initial charge to: 670 pence
+
+The charge per Km in pence for day journey is: 50
+Do you want to change the  charge   (Y/N)?
+y
+Please input new day charge in pence...
+30
+You changed the day charge to: 30 pence
+
+The charge per Km in pence for night journeys is: 70
+Do you want to change the  charge   (Y/N)?
+y
+Please input new night charge per Km in pence...
+90
+You changed the nigh charge to: 90 pence
+
+The curent time period for your journey is: DAY
+That means that the current charge in pence for this journey is: 30
+
+The charge per minute in pence is: 40
+Do you want to change the  charge   (Y/N)?
+y
+Please input new night charge per minute in pence...
+60
+You changed the charge per minute to: 60 pence
+
+Estimating fare for the journey...based on the folowing formula: 
+Fare=initialCharge + duration * chargePerMin + distance * currentChargePerKm
+
+The fare for this journey in pence is: 7090
+
+
+Taxi Journey created !
+Overview of the created journey: 
+TaxiJourney: [ location: Nottingham, destination: Leicester, amPm: DAY,
+startTime: 22:23, endTime: 23:30, duration: 67,distance: 80,
+currentChargePerKm: 30, chargePerMin: 60, initialCharge: 670,
+chargePerkmDay: 30, chargePerKmNight: 90]
+
+Do you want to create a new Taxi Journey?   Y/N?
+n
+Thank you !
+
+
+Please choose a file name for the report for the day  (Example: E:/report.txt):..
+F:/report.txt
+
+****************************************************************************************************************************
+									COPY/PASTE THE OUTPUT TO F:/report.txt
+****************************************************************************************************************************
+
+
+
+Journey number: 1 overview:
+
+TaxiJourney: [ location: Manchester, destination: Derby, amPm: NIGHT,
+startTime: 09:23, endTime: 11:45, duration: 142,distance: 345,
+currentChargePerKm: 90, chargePerMin: 50, initialCharge: 450,
+chargePerkmDay: 70, chargePerKmNight: 90]
+
+Fare for the journey in pence: 38600
+*******************************************************************************************************
+
+
+Journey number: 2 overview:
+
+TaxiJourney: [ location: Nottingham, destination: Leicester, amPm: DAY,
+startTime: 22:23, endTime: 23:30, duration: 67,distance: 80,
+currentChargePerKm: 30, chargePerMin: 60, initialCharge: 670,
+chargePerkmDay: 30, chargePerKmNight: 90]
+
+Fare for the journey in pence: 7090
+*******************************************************************************************************
+*******************************************************************************************************
+Total number of Taxi Journeys for the day: 2
+
+Total amount of all fares for the day: 45690

@@ -1,0 +1,43 @@
+
+
+*******************************************************************************************************************************************************
+																	REPORT
+*******************************************************************************************************************************************************
+
+
+ A TaxiJourney has a location, destination, start time and end time.
+ There is an estimated duration (endTime - startTime) of the journey, as well as initialCharge, chargePerMinute and distance.
+ initialCharge - the initial charge for the journey.
+ currentChargePerKm is the current charge and depends on whether the journey is in day or night time, 
+ chargePerKmDay - the price per kilometre for day journeys will be assigned to the currentChargePerKm field if the journey took place during the day,
+ chargePerKmNight - the price per kilometre for night journeys will be assigned to the currentChargePerKm field if the journey took place during the night.
+ 
+ The class has a getFare method which calculates the charge for the journey, using the formula :
+ Fare = initialCharge+chargePerMIn*duration+currentChargePerKm*distance;
+ 
+ I am using an enum DayOrNight which holds two values DAY and NIGHT, the value of amPm is passed to the enum and using switch the currentChargePerKm gets updated, 
+ depending of that when the journey took place.
+ 
+ The startTime and endTime of the taxi journey are passed as strings. The format of those strings must be "HH:mm".
+ Also the end time should be later than the start time. Checks are made and the new endTime value would not be assigned 
+ to the endTime field if endTime is not greater than startTime.
+ 
+ When setting endTime and startTime the method 
+ checks if the first two characters and the last two characters of the string that is passed are numbers
+ between 0-23 for the first two and 0-59 for the second two. It also checks if the length of the string is 5. 
+ 
+ But if someone passes for example instead of "12:30", but "12630"..
+ it would still be a valid input for the setStartTime method.
+ But it will throw a parse exception when trying to use the getDuration method.
+ 
+ The only reason why "12630" should not be a valid argument for the endTime method is the design decision I made that
+ once endTime is set the duration will be automatically estimated. And that would throw a parse exception. 
+ 
+ The getDuration method uses SipleDateFormat to set the format to "HH:mm"
+ and then parses the values of endTime and startTime to that format and assign them to Date type variables.
+ Using the getTime method from the class Date the startTime is substituted form the endTime.
+ The result of that is in milliseconds, which i then convert to minutes.
+ 
+ 
+ 
+ 
